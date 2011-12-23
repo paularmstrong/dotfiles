@@ -6,5 +6,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "scripts/" --exclude "osx/" --exclude "Makefile" --exclude "README.md" -av . ~/.
   	source "$HOME/.bash_profile"
 else
-echo "Doing Nothing!"
+echo "NOOOOOOOOOOOO!"
 fi
