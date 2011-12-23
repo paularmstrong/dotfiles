@@ -106,7 +106,7 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 # Enable Safari’s debug menu
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
-# Remove useless icons from Safari’s bookmarks bar
+# Remove useless icons from Safari's bookmarks bar
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 # Only use UTF-8 in Terminal.app
