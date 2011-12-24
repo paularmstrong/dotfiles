@@ -1,4 +1,8 @@
-all: install setup
+all: depend install setup
+
+depend:
+	@chmod a+x scripts/*
+	@./scripts/dependencies.sh
 
 install:
 	@chmod a+x scripts/*
@@ -8,4 +12,4 @@ setup:
 	@chmod a+x scripts/*
 	@./scripts/setup.sh
 
-.PHONY: all setup
+.PHONY: all depend install setup
