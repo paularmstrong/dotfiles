@@ -31,7 +31,7 @@ syntax on
 " Use my colours
 colorscheme shortshell
 
-" Lets colors not be all bold for 8 color terminals 
+" Lets colors not be all bold for 8 color terminals
 set t_Co=256
 
 " Strip trailing whitespace (,ss)
@@ -52,3 +52,4 @@ augroup END
 " JSON
 au BufRead,BufNewFile *.json set ft=json syntax=javascript
 
+autocmd BufWritePre * :%s/\s\+$//e
