@@ -82,6 +82,13 @@ defaults write com.apple.iTunes disablePingSidebar -bool true
 defaults write com.apple.iTunes disablePing -bool true
 
 ########################################
+# Textmate 2
+########################################
+
+# Make HTML previews show in their own window
+defaults write com.macromates.TextMate.preview htmlOutputPlacement window
+
+########################################
 # Miscellaneous
 ########################################
 
