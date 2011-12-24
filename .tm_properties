@@ -1,20 +1,20 @@
-TM_GIT = "/usr/bin/git"
+TM_GIT = '/usr/bin/git'
 
-includeFiles = "*.{gitignore,htaccess,npmignore}"
-excludeFiles = "*.{so,pyc,o,scssc}"
-excludeFilesInBrowser = "*.{min,pack}.*"
-excludeDirectories = "build,dist,tmp,log,node_modules"
+includeFiles = '*.{gitignore,htaccess,npmignore}'
+excludeFiles = '*.{so,pyc,o,scssc}'
+excludeFilesInBrowser = '*.{min,pack}.*'
+excludeDirectories = 'build,dist,tmp,log,node_modules'
 
-windowTitle = "$TM_DISPLAYNAME — ${CWD/^.*\///}"
+windowTitle = '$TM_DISPLAYNAME — ${CWD/^.*\///}'
 
-fontName = "Monaco"
+fontName = 'Monaco'
 fontSize = 11
 softTabs = true
 sofWrap = true
 showInvisibles = false
 spellChecking = false
 tabSize = 4
-wrapColumn = "Use Window Frame"
+wrapColumn = 'Use Window Frame'
 
 [ .git/COMMIT_EDITMSG ]
 spellChecking = true
@@ -27,5 +27,8 @@ softTabs = false
 softTabs = false
 tabSize = 4
 
-[ "{README,INSTALL,LICENSE,TODO}" ]
-fileType = "text.plain"
+[ '{README,INSTALL,LICENSE,TODO}' ]
+fileType = 'text.plain'
+
+[ '{applypatch-msg,pre-applypatch,post-applypatch,pre-commit,prepare-commit-msg,commit-msg,post-commit,pre-rebase,post-checkout,post-merge,pre-receive,update,post-receive,post-update,pre-auto-gc}']
+fileType = 'source.shell'
