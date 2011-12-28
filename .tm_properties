@@ -3,7 +3,7 @@ TM_GIT = '/usr/bin/git'
 includeFiles = '*.{gitignore,htaccess,npmignore}'
 excludeFiles = '*.{so,pyc,o,scssc}'
 excludeFilesInBrowser = '*.{min,pack}.*'
-excludeDirectories = 'build,dist,tmp,log,node_modules'
+excludeDirectories = '{build,dist,tmp,log,node_modules}'
 
 windowTitle = '$TM_DISPLAYNAME — ${CWD/^.*\///}'
 
