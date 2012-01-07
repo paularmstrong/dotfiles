@@ -42,9 +42,14 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 # easy HTTP requests
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do alias "$method"="lwp-request -m '$method'"; done
 
+# quit OS X applications cleanly
+function quit() {
+    osascript -e "tell application \"$1\" to quit"
+}
+
 # Extract based upon file ext
 function ex() {
-    if [ -f $1 ] ; then
+    if [ -f $1 ]; then
         case $1 in
             *.tar.bz2) tar xvjf $1   ;;
             *.tar.gz)  tar xvzf $1   ;;
