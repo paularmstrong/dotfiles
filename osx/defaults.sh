@@ -68,8 +68,11 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
-# Empty Trash securely by default
-defaults write com.apple.finder EmptyTrashSecurely -bool true
+# Do not empty Trash securely by default
+defaults write com.apple.finder EmptyTrashSecurely -bool false
+
+# Disable annoying "application crashed" dialogs
+defaults write com.apple.CrashReporter DialogType none
 
 ########################################
 # iTunes
