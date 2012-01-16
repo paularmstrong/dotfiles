@@ -20,7 +20,7 @@ fi
 function base64() {
     EXT=`echo "$1"|awk -F . '{print $NF}'`
     B64=`openssl base64 -in $1 | tr -d '\n'`
-    echo "data:image/$EXT,base64,$B64" | pbcopy
+    echo "data:image/$EXT;base64,$B64" | pbcopy
 }
 
 # TextMate
