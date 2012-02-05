@@ -33,7 +33,6 @@ set backupdir=$HOME/.vim/backups " store backups under ~/.vim/backup
 set backupcopy=yes " keep attributes of original file
 set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
 set directory=~/.vim/swaps,~/tmp,. " keep swp files under ~/.vim/swap
-set undofile " persisten undo
 
 " ----------------------------------------------------------------------------
 "  UI
