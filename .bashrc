@@ -4,6 +4,14 @@ source ~/.bash/completions.sh
 source ~/.bash/paths.sh
 source ~/.bash/config.sh
 
+HOST_SYMBOL="⚡"
+HOST_COLOR="3"
+
+# use .localrc for settings specific to one system
+if [ -f ~/.localrc ]; then
+  source ~/.localrc
+fi
+
 function _git_prompt() {
     local git_status="`git status -unormal 2>&1`"
     if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
@@ -21,9 +29,4 @@ function _git_prompt() {
     fi
 }
 
-export PS1="\W\$(_git_prompt)\[$(tput bold)$(tput setaf 3)\] ⚡ \[$(tput sgr0)\]"
-
-# use .localrc for settings specific to one system
-if [ -f ~/.localrc ]; then
-  source ~/.localrc
-fi
+export PS1="\W\$(_git_prompt)\[$(tput bold)$(tput setaf $HOST_COLOR)\] $HOST_SYMBOL \[$(tput sgr0)\]"
