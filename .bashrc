@@ -29,4 +29,4 @@ function _git_prompt() {
     fi
 }
 
-export PS1="\W\$(_git_prompt)\[$(tput bold)$(tput setaf $HOST_COLOR)\] $HOST_SYMBOL \[$(tput sgr0)\]"
+export PS1="\W\[$(_git_prompt)\]\[\e[0;3"$HOST_COLOR"m\] $HOST_SYMBOL \[\e[0m\]"
