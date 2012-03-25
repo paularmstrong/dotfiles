@@ -4,8 +4,28 @@ source ~/.bash/completions.sh
 source ~/.bash/paths.sh
 source ~/.bash/config.sh
 
+if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+    color_reset=`tput sgr0`
+    color_red=`tput setaf 1`
+    color_green=`tput setaf 2`
+    color_yellow=`tput setaf 3`
+    color_blue=`tput setaf 4`
+    color_magenta=`tput setaf 5`
+    color_cyan=`tput setaf 6`
+    text_bold=`tput bold`
+else
+    color_reset=
+    color_red=
+    color_green=
+    color_yellow=
+    color_blue=
+    color_magenta=
+    color_cyan=
+    text_bold=
+fi
+
 HOST_SYMBOL="⚡"
-HOST_COLOR="3"
+HOST_COLOR=${color_yellow}
 
 # use .localrc for settings specific to one system
 if [ -f ~/.localrc ]; then
@@ -16,17 +36,17 @@ function _git_prompt() {
     local git_status="`git status -unormal 2>&1`"
     if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
         if [[ "$git_status" =~ nothing\ to\ commit ]]; then
-            local ansi=2
+            local ansi=${color_green}
         elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
-            local ansi=6
+            local ansi=${color_cyan}
         else
-            local ansi=5
+            local ansi=${color_magenta}
         fi
         if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
             branch="`git describe --all --contains --abbrev=4 HEAD 2> /dev/null || echo HEAD`"
         fi
-        echo " $(tput setaf $ansi)$branch$(tput sgr0)"
+        echo " ${ansi}${branch}${color_reset}"
     fi
 }
 
-export PS1="\W\[$(_git_prompt)\]\[\e[0;3"$HOST_COLOR"m\] $HOST_SYMBOL \[\e[0m\]"
+export PS1="\W$(_git_prompt)\[${text_bold}${HOST_COLOR}\] ${HOST_SYMBOL} \[${color_reset}\]"
