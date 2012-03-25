@@ -32,21 +32,29 @@ if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
 
+function _git_color() {
+    local git_status="`git status -unormal 2>&1`"
+    ansi=
+    if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
+        if [[ "$git_status" =~ nothing\ to\ commit ]]; then
+            ansi=$color_green
+        elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
+            ansi=$color_cyan
+        else
+            ansi=$color_magenta
+        fi
+    fi
+    echo "${ansi}"
+}
+
 function _git_prompt() {
     local git_status="`git status -unormal 2>&1`"
     if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
-        if [[ "$git_status" =~ nothing\ to\ commit ]]; then
-            local ansi=${color_green}
-        elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
-            local ansi=${color_cyan}
-        else
-            local ansi=${color_magenta}
-        fi
         if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
             branch="`git describe --all --contains --abbrev=4 HEAD 2> /dev/null || echo HEAD`"
         fi
-        echo " ${ansi}${branch}${color_reset}"
+        echo -ne " ${branch}"
     fi
 }
 
-export PS1="\W\$(_git_prompt)\[${text_bold}${HOST_COLOR}\] ${HOST_SYMBOL} \[${color_reset}\]"
+export PS1="\W\[\$(_git_color)\]\$(_git_prompt)\[${text_bold}${HOST_COLOR}\] ${HOST_SYMBOL} \[${color_reset}\]"
