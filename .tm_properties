@@ -1,9 +1,17 @@
-TM_GIT = '/usr/bin/git'
-
 includeFiles = '*.{gitignore,htaccess,npmignore}'
-excludeFiles = '*.{so,pyc,o,scssc}'
-excludeFilesInBrowser = '*.{min,pack}.*'
-excludeDirectories = '{build,dist,tmp,log,node_modules}'
+excludeFiles = '*.{so,pyc,o,css,min.js,php,lint-test,log,cache}'
+excludeDirectories = '{bin,resources,support,xutils,css,image,dist,tmp,logs,node_modules,compiled}'
+excludeFilesInBrowser = '{$excludeFiles,}'
+excludeDirectoriesInBrowser = '{$excludeDirectories,}'
+excludeInFileChooser = '{$excludeFiles,$excludeDirectories,}'
+excludeInFolderSearch = '{$excludeInFileChooser,$excludeDirectories,}'
+
+TM_ORGANIZATION_NAME = 'Paul Armstrong Designs'
+
+TM_GIT = '/usr/bin/git'
+PATH = "$PATH:/usr/local/bin"
+TM_MAKE_FILE = '${CWD}/Makefile'
+TM_MAKE_TARGET = 'test'
 
 windowTitle = '$TM_DISPLAYNAME — ${CWD/^.*\///}'
 
