@@ -49,4 +49,4 @@ function _git_prompt() {
     fi
 }
 
-export PS1="\W$(_git_prompt)\[${text_bold}${HOST_COLOR}\] ${HOST_SYMBOL} \[${color_reset}\]"
+export PS1="\W\$(_git_prompt)\[${text_bold}${HOST_COLOR}\] ${HOST_SYMBOL} \[${color_reset}\]"
