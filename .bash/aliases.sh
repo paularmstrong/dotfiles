@@ -78,3 +78,9 @@ function ex() {
         echo "'$1' is not a valid file"
     fi
 }
+
+function rm-branch() {
+    branch="$(git branch --no-color | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')"
+    git checkout master
+    git branch -D $branch
+}
