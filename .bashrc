@@ -24,7 +24,7 @@ else
     text_bold=
 fi
 
-HOST_SYMBOL="⚡"
+HOST_SYMBOL="⚡︎"
 HOST_COLOR=${color_yellow}
 
 # use .localrc for settings specific to one system
