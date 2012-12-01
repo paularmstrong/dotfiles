@@ -79,6 +79,14 @@ function ex() {
     fi
 }
 
+# Make a goo.gl short URL
+function shorturl() {
+    url=$(curl -s https://www.googleapis.com/urlshortener/v1/url -H "Content-Type: application/json" -d "{\"longUrl\": \"$1\"}" | awk 'BEGIN { FS = "id\": \"" }; { print $2}' | tr -d '\",' | tr -d '\n')
+    echo $url | pbcopy
+    echo $url
+}
+
+# Completely remove the current branch from a git repo
 function rm-branch() {
     branch="$(git branch --no-color | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')"
     git checkout master
