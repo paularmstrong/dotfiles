@@ -58,3 +58,5 @@ function _git_prompt() {
 }
 
 export PS1="\W\[\$(_git_color)\]\$(_git_prompt)\[${text_bold}${HOST_COLOR}\] ${HOST_SYMBOL} \[${color_reset}\]"
+
+export CHEF_USER=paularmstrong
