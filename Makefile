@@ -32,6 +32,19 @@ ifeq ($(shell which rvm),)
 	@echo "$(NO_COLOR)"
 	@\curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3
 endif
+	@brew cask install google-chrome
+	@brew cask install adium
+	@brew cask install transmit
+	@brew cask install macfusion
+	@brew cask install vlc
+	@brew cask install skype
+	@brew cask install dropbox
+	@brew cask install fluid
+	@brew cask install flux
+	@brew cask install iterm2
+	@brew cask install sublime-text
+	@brew cask install alfred
+	@brew cask install vagrant
 	@echo "$(OK_COLOR)"
 	@echo "----------------------------------------"
 	@echo "All dependencies installed"
