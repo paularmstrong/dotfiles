@@ -49,6 +49,8 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # Copy my public key
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
+alias vag="vagrant up && vagrant ssh"
+
 # easy HTTP requests
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do alias "$method"="lwp-request -m '$method'"; done
 
@@ -92,3 +94,4 @@ function rm-branch() {
     git checkout master
     git branch -D $branch
 }
+

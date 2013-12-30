@@ -15,3 +15,5 @@
     token = <github.token>
 [alias]
     graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+    pr = pull --rebase
+    rb = !git fetch origin && git rebase origin/master
