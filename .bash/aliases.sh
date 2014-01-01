@@ -49,7 +49,13 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # Copy my public key
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
+# Launch a vagrant VM
 alias vag="vagrant up && vagrant ssh"
+
+# Make a directory and immediately jump into it
+function mkd() {
+    mkdir $1 && cd $1
+}
 
 # easy HTTP requests
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do alias "$method"="lwp-request -m '$method'"; done
