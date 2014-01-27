@@ -11,9 +11,7 @@ if [[ ! $(which brew) ]]; then
     echo "Homebrew not found. Installing..."
     echo "----------------------------------------"
     echo "${NO_COLOR}"
-    @ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-    @brew tap phinze/homebrew-cask
-    @brew install brew-cask
+    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 fi
 
 if [[ ! $(which node) ]]; then
@@ -22,7 +20,7 @@ if [[ ! $(which node) ]]; then
     echo "Node.js not found. Installing..."
     echo "----------------------------------------"
     echo "${NO_COLOR}"
-    @brew install node
+    brew install node
 fi
 
 if [[ ! $(which rvm) ]]; then
@@ -40,6 +38,9 @@ echo "Updating Homebrew..."
 echo "----------------------------------------"
 echo "${NO_COLOR}"
 brew update
+
+brew tap phinze/homebrew-cask
+brew install brew-cask
 brew upgrade brew-cask
 
 read -p "Do you want to Install Applications? (y/n) " -n 1
