@@ -62,3 +62,4 @@ export PS1="\W\[\$(_git_color)\]\$(_git_prompt)\[${text_bold}${HOST_COLOR}\] ${H
 export CHEF_USER=paularmstrong
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -s "$(brew --prefix nvm)/nvm.sh" ]] && source $(brew --prefix nvm)/nvm.sh

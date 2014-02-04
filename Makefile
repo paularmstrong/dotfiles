@@ -1,6 +1,6 @@
 basic:
 	@chmod a+x scripts/*
-	@./scripts/setup.sh
+	@./scripts/install.sh
 
 osx:
 	@chmod a+x osx/*

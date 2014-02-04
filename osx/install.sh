@@ -1,9 +1,9 @@
 #!/bin/bash
 
-NO_COLOR=\x1b[0m
-OK_COLOR=\x1b[32;01m
-ERROR_COLOR=\x1b[31;01m
-WARN_COLOR=\x1b[33;01m
+NO_COLOR=$(tput sgr0)
+OK_COLOR=$(tput setaf 2)
+ERROR_COLOR=$(tput setaf 1)
+WARN_COLOR=$(tput setaf 3)
 
 if [[ ! $(which brew) ]]; then
     echo "${WARN_COLOR}"
@@ -42,6 +42,20 @@ brew update
 brew tap phinze/homebrew-cask
 brew install brew-cask
 brew upgrade brew-cask
+
+brew list nvm &> /dev/null
+if [[ $? -ne 0 ]]; then
+    echo "${WARN_COLOR}"
+    echo "----------------------------------------"
+    echo "Updating Homebrew..."
+    echo "----------------------------------------"
+    echo "${NO_COLOR}"
+    brew install nvm
+    source $(brew --prefix nvm)/nvm.sh
+    nvm install v0.11
+    nvm install v0.10
+    nvm alias default 0.10
+fi
 
 read -p "Do you want to Install Applications? (y/n) " -n 1
 echo
@@ -87,5 +101,14 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     ln -s ~/Dropbox/Library/Colors ~/Library/Colors
 fi
 
-echo "Now go download Sublime Text"
-open "http://www.sublimetext.com/3"
+read -p "Do you want to download Sublime Text? (y/n) " -n 1
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    open "http://www.sublimetext.com/3"
+fi
+
+echo "${OK_COLOR}"
+echo "----------------------------------------"
+echo "Done"
+echo "----------------------------------------"
+echo "${NO_COLOR}"
