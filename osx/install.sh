@@ -39,6 +39,7 @@ echo "----------------------------------------"
 echo "${NO_COLOR}"
 brew update
 
+brew install git-extras
 brew tap phinze/homebrew-cask
 brew install brew-cask
 brew upgrade brew-cask
@@ -69,13 +70,15 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     brew cask install alfred
     brew cask install dropbox
     brew cask install fluid
-    brew cask install flux
+    brew cask install f-lux
     brew cask install google-chrome
     brew cask install iterm2
     brew cask install macfusion
     brew cask install skype
     brew cask install totalfinder
     brew cask install transmit
+    brew cask install virtualbox
+    brew cask install vagrant
     brew cask install vlc
 fi
 
