@@ -40,6 +40,7 @@ echo "${NO_COLOR}"
 brew update
 
 brew install git-extras
+brew install ansible
 brew tap phinze/homebrew-cask
 brew install brew-cask
 brew upgrade brew-cask
