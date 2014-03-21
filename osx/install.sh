@@ -59,7 +59,7 @@ if [[ $? -ne 0 ]]; then
     nvm alias default 0.10
 fi
 
-read -p "Do you want to Install Applications? (y/n) " -n 1
+read -p "Do you want to Install OS X Applications? (y/n) " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "${WARN_COLOR}"
