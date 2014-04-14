@@ -13,6 +13,8 @@
 [github]
     user = <github.user>
     token = <github.token>
+[help]
+    autocorrect = 1
 [alias]
     graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
     pr = pull --rebase
