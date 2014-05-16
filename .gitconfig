@@ -1,5 +1,5 @@
 [user]
-    name = <git.name>
+    name = "<git.name>"
     email = <git.email>
 [color]
     diff = auto
@@ -10,9 +10,6 @@
     whitespace = "trailing-space,space-before-tab"
 [apply]
     whitespace = "fix"
-[github]
-    user = <github.user>
-    token = <github.token>
 [help]
     autocorrect = 1
 [push]
