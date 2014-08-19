@@ -63,6 +63,8 @@ export CHEF_USER=paularmstrong
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-if [[ $(which brew) ]]; then
-    [[ -s "$(brew --prefix nvm)/nvm.sh" ]] && source $(brew --prefix nvm)/nvm.sh
+if [ "$(uname)" == "Darwin" ]; then
+    if [[ $(which brew) ]]; then
+        [[ -s "$(brew --prefix nvm)/nvm.sh" ]] && source $(brew --prefix nvm)/nvm.sh
+    fi
 fi
