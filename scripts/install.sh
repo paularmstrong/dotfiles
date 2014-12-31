@@ -25,5 +25,7 @@ source "$HOME/.bash_profile"
 git checkout .gitconfig
 
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    (cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && sudo make install)
+    if [[ ! $(which git-extras) ]]; then
+        (cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && sudo make install)
+    fi
 fi
