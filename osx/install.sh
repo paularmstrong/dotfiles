@@ -14,14 +14,20 @@ if [[ ! $(which brew) ]]; then
     ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 fi
 
-if [[ ! $(which node) ]]; then
-    echo "${WARN_COLOR}"
-    echo "----------------------------------------"
-    echo "Node.js not found. Installing..."
-    echo "----------------------------------------"
-    echo "${NO_COLOR}"
-    brew install node
-fi
+BREW_PKGS=$(brew ls -1)
+
+function brew_install() {
+    if $BREW_PKGS | grep -q "^$1\$"; then
+        tput setaf 1
+        echo "$1 not found. Installing..."
+        tput sgr0
+        brew install $1
+    fi
+    tput setaf 2
+    echo -n "✔︎"
+    tput sgr0
+    echo " $1"
+}
 
 if [[ ! $(which rvm) ]]; then
     echo "${WARN_COLOR}"
@@ -39,28 +45,18 @@ echo "----------------------------------------"
 echo "${NO_COLOR}"
 brew update
 
-brew install git-extras
-brew install ansible
-brew tap phinze/homebrew-cask
-brew install brew-cask
-brew upgrade brew-cask
+brew_install "node"
+brew_install "nvm"
+brew_install "python"
+brew_install "git-extras"
+brew_install "ansible"
+brew_install "caskroom/cask/brew-cask"
 
-brew list nvm &> /dev/null
-if [[ $? -ne 0 ]]; then
-    echo "${WARN_COLOR}"
-    echo "----------------------------------------"
-    echo "Updating Homebrew..."
-    echo "----------------------------------------"
-    echo "${NO_COLOR}"
-    brew install nvm
-    source $(brew --prefix nvm)/nvm.sh
-    nvm install v0.11
-    nvm install v0.10
-    nvm alias default 0.10
-fi
+sudo pip install powerline-status -q
+sudo gem install tmuxinator --user-install &>/dev/null
 
 read -p "Do you want to Install OS X Applications? (y/n) " -n 1
-echo
+echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "${WARN_COLOR}"
     echo "----------------------------------------"
@@ -90,7 +86,7 @@ echo "----------------------------------------"
 echo "${NO_COLOR}"
 
 read -p "Do you want to link prefs from Dropbox? (y/n) " -n 1
-echo
+echo " "
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     for file in ~/Dropbox/Library/Application\ Support/*
     do
@@ -106,7 +102,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 read -p "Do you want to download Sublime Text? (y/n) " -n 1
-echo
+echo " "
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     open "http://www.sublimetext.com/3"
 fi
