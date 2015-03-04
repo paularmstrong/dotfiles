@@ -1,0 +1,21 @@
+{
+  "segments": {
+    "right": [
+      {
+      	"module": "powerline.segments.common",
+        "name": "weather",
+        "args": {
+        	"update_first": false,
+        	"unit": "F",
+        	"location_query": "97702"
+        }
+      },
+      {
+        "function": "powerline.segments.common.time.date"
+      },
+      {
+        "function": "powerline.segments.common.net.hostname"
+      }
+    ]
+  }
+}
