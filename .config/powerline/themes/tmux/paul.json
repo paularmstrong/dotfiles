@@ -2,10 +2,9 @@
   "segments": {
     "right": [
       {
-      	"module": "powerline.segments.common",
-        "name": "weather",
+      	"function": "powerline.segments.common.wthr.weather",
         "args": {
-        	"update_first": false,
+        	"update_first": true,
         	"unit": "F",
         	"location_query": "97702"
         }
