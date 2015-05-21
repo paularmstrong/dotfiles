@@ -1,0 +1,30 @@
+{
+  "segments": {
+    "left": [
+      {
+        "function": "powerline.segments.common.env.environment",
+        "priority": 10,
+        "args": {
+          "variable": "HOST_SYMBOL"
+        }
+      },
+      {
+        "function": "powerline.segments.shell.mode"
+      },
+      {
+        "function": "powerline.segments.shell.cwd",
+        "priority": 20,
+        "args": {
+          "dir_limit_depth": 1
+        }
+      },
+      {
+        "function": "powerline.segments.common.vcs.branch",
+        "priority": 40,
+        "args": {
+          "status_colors": true
+        }
+      }
+    ]
+  }
+}
