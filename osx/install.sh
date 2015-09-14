@@ -11,13 +11,11 @@ if [[ ! $(which brew) ]]; then
     echo "Homebrew not found. Installing..."
     echo "----------------------------------------"
     echo "${NO_COLOR}"
-    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-BREW_PKGS=$(brew ls -1)
-
 function brew_install() {
-    if $BREW_PKGS | grep -q "^$1\$"; then
+    if [[ ! $(brew ls --versions "$1" | grep -q "^$1 ") ]]; then
         tput setaf 1
         echo "$1 not found. Installing..."
         tput sgr0
