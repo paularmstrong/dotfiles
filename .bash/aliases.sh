@@ -23,9 +23,6 @@ function base64() {
     echo "data:image/$EXT;base64,$B64" | pbcopy
 }
 
-# TextMate
-alias rmateInstall="scp /Applications/TextMate.app/Contents/Frameworks/Preferences.framework/Versions/A/Resources/rmate"
-alias matessh="ssh -R 52698:127.0.0.1:52698"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
