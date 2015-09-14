@@ -33,7 +33,7 @@ if [[ ! $(which rvm) ]]; then
     echo "RVM not found. Installing..."
     echo "----------------------------------------"
     echo "${NO_COLOR}"
-    \curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3
+    \curl -L https://get.rvm.io | bash -s stable --ruby=2.2.0
 fi
 
 echo "${WARN_COLOR}"
