@@ -4,8 +4,8 @@ Just some .files pieced together from all over.
 
 ## Install
 
-`make install`
+`make`
 
 ## OS X Preferences
 
-`make setup`
+`make osx`
