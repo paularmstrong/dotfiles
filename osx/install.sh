@@ -63,12 +63,12 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "${NO_COLOR}"
     brew cask install adium
     brew cask install alfred
+    brew cask install bettertouchtool
     brew cask install dropbox
     brew cask install fluid
     brew cask install f-lux
     brew cask install google-chrome
     brew cask install iterm2
-    brew cask install macfusion
     brew cask install skype
     brew cask install totalfinder
     brew cask install transmit
