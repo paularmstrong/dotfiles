@@ -20,12 +20,15 @@ while test $# -gt 0; do
     esac
 done
 
+sudo pip install powerline-status -q
+sudo gem install tmuxinator --user-install &>/dev/null
+
 rsync --exclude ".git/" --exclude ".DS_Store" --exclude "scripts/" --exclude "osx/" --exclude "Makefile" --exclude "README.md" -av . ~/.
 source "$HOME/.bash_profile"
 git checkout .gitconfig
 
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     if [[ ! $(which git-extras) ]]; then
-        (cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && sudo make install)
+        (cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && git checkout $(git describe --tags $(git rev-list --tags --max-count=1)) && sudo make install)
     fi
 fi

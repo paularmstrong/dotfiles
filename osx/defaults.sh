@@ -2,7 +2,9 @@
 
 #
 # Most of this is from https://github.com/mathiasbynens/dotfiles/blob/master/.osx
-#
+
+# Dark Menubar
+sudo defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
 
 ########################################
 # Dock
@@ -132,4 +134,4 @@ defaults write com.apple.dashboard devmode -bool true
 chflags nohidden ~/Library
 
 # Kill affected applications
-for app in Safari Finder Dock; do killall "$app"; done
+for app in Safari Finder Dock SystemUIServer; do killall "$app"; done

@@ -1,13 +1,22 @@
 NAME=Paul Armstrong
-EMAIL=paul@paularmstrongdesigns.com
+EMAIL=paul@spaceyak.com
 
 basic:
 	@chmod a+x scripts/*
 	@./scripts/install.sh --name="${NAME}" --email="${EMAIL}"
 
-osx:
-	@chmod a+x osx/*
-	@./osx/defaults.sh
-	@./osx/install.sh
+osx: defaults homebrew prefs apps
 
-.PHONY: basic osx
+defaults:
+	@./osx/defaults.sh
+
+homebrew:
+	@./osx/homebrew.sh
+
+apps:
+	@./osx/apps.sh
+
+prefs:
+	@./osx/prefs.sh
+
+.PHONY: basic osx defaults homebrew apps prefs
