@@ -41,6 +41,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     brew cask install google-chrome
     brew cask install iterm2
     brew cask install skype
+    brew cask install slate
     brew cask install sublime-text3
     brew cask install transmit
     brew cask install virtualbox
