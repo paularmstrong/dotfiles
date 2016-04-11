@@ -11,7 +11,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     do
         ln -s "$file" ~/Library/Preferences/
     done
-    ln -s ~/Dropbox/Library/Safari ~/Library/Safari
-    ln -s ~/Dropbox/Library/Sublime\ Text\ 3 ~/Library/Sublime\ Text\ 3
-    ln -s ~/Dropbox/Library/Colors ~/Library/Colors
+    rm -rf /Library/Safari
+    rm -rf /Library/Colors
+    ln -s ~/Dropbox/Library/Safari ~/Library
+    ln -s ~/Dropbox/Library/Colors ~/Library
 fi
