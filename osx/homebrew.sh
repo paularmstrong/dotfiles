@@ -39,3 +39,5 @@ brew_install "nvm"
 brew_install "python"
 brew_install "git-extras"
 brew_install "ansible"
+
+pip install powerline-status
