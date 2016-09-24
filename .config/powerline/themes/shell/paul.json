@@ -3,13 +3,10 @@
     "left": [
       {
         "function": "powerline.segments.common.env.environment",
-        "priority": 10,
+        "priority": 50,
         "args": {
           "variable": "HOST_SYMBOL"
         }
-      },
-      {
-        "function": "powerline.segments.shell.mode"
       },
       {
         "function": "powerline.segments.shell.cwd",
@@ -20,10 +17,14 @@
       },
       {
         "function": "powerline.segments.common.vcs.branch",
-        "priority": 40,
+        "priority": 50,
         "args": {
           "status_colors": true
         }
+      },
+      {
+        "function": "powerline.segments.common.vcs.stash",
+        "priority": 10
       }
     ]
   }

@@ -4,6 +4,8 @@ source ~/.bash/completions.sh
 source ~/.bash/paths.sh
 source ~/.bash/config.sh
 
+export HOST_SYMBOL="⚡︎"
+
 # use .localrc for settings specific to one system
 if [ -f ~/.localrc ]; then
   source ~/.localrc
