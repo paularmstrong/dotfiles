@@ -34,8 +34,8 @@ echo "----------------------------------------"
 echo "${NO_COLOR}"
 brew update
 
-brew_install "node"
-brew_install "nvm"
-brew_install "python"
+#brew_install "node"
+#brew_install "nvm"
+#brew_install "python"
 brew_install "git-extras"
-brew_install "ansible"
+#brew_install "ansible"

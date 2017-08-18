@@ -1,0 +1,20 @@
+[user]
+    name = "<git.name>"
+    email = <git.email>
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+[core]
+    whitespace = "trailing-space,space-before-tab"
+[apply]
+    whitespace = "fix"
+[help]
+    autocorrect = 1
+[push]
+    default = current
+[alias]
+    graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+    pr = pull --rebase
+    rb = !git fetch origin && git rebase origin/master

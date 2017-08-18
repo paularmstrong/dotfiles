@@ -39,13 +39,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     brew cask install dropbox
     brew cask install fluid
     brew cask install f-lux
-    brew cask install google-chrome
+#    brew cask install google-chrome
     brew cask install iterm2
     brew cask install skype
     brew cask install sublime-text3
     brew cask install totalfinder
-    brew cask install transmit
-    brew cask install virtualbox
-    brew cask install vagrant
-    brew cask install vlc
+#    brew cask install transmit
+#    brew cask install virtualbox
+#    brew cask install vagrant
+#    brew cask install vlc
 fi

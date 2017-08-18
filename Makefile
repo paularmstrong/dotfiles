@@ -1,5 +1,5 @@
 NAME=Paul Armstrong
-EMAIL=paul@spaceyak.com
+EMAIL=parmstrong@twitter.com
 
 basic:
 	@chmod a+x scripts/*

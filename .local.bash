@@ -57,7 +57,9 @@ function _git_prompt() {
     fi
 }
 
-export PS1="\W\[\$(_git_color)\]\$(_git_prompt)\[${text_bold}${HOST_COLOR}\] ${HOST_SYMBOL} \[${color_reset}\]"
+source "/opt/twitter/opt/git/etc/bash_completion.d/git-prompt.sh"
+export PS1="[\h \[\033[0;36m\]\W\[\033[0m\]$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")]\$"
+# export PS1="\W\[\$(_git_color)\]\$(_git_prompt)\[${text_bold}${HOST_COLOR}\] ${HOST_SYMBOL} \[${color_reset}\]"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
